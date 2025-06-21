@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from budgets import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.transactions_list, name='home'),  # 👈 also add this if you want homepage
+    path('add/', views.add_transaction, name='add_transaction'),
 ]
